@@ -1,0 +1,331 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#universidad-centroamericana-josé-simeón-cañas">Universidad Centroamericana José Simeón Cañas</a></li>
+<li><a href="#ciclo-012023-laboratorio-configuración-de-un-router-y-switch.">Ciclo 01/2023, Laboratorio: Configuración de un router y switch.</a>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href="#información-teórica">Información teórica</a>
+<ul>
+<li><a href="#switches">Switches</a></li>
+<li><a href="#algoritmos-de-enrutamiento">Algoritmos de enrutamiento</a></li>
+</ul>
+</li>
+<li><a href="#creación-de-una-vlan-haciendo-uso-de-un-switch-y-un-router">Creación de una VLAN haciendo uso de un switch y un router</a>
+<ul>
+<li><a href="#creación-de-una-vlan-incorporando-como-primera-instancia-el-switch.">Creación de una vlan incorporando como primera instancia el switch.</a></li>
+<li><a href="#configuración-de-la-velocidad-de-los-puertos">Configuración de la velocidad de los puertos</a></li>
+<li><a href="#incorporación-del-router-en-la-vlan.">Incorporación del router en la vlan.</a></li>
+<li><a href="#sugerencia-de-direcciones-ip">Sugerencia de direcciones IP</a></li>
+</ul>
+</li>
+<li><a href="#reinicio-de-switch-y-router">Reinicio de switch y router</a></li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="universidad-centroamericana-josé-simeón-cañas">Universidad Centroamericana José Simeón Cañas</h1>
+<div align="center"><img src="./ucalogo.png">
+</div><h1 id="ciclo-012023-laboratorio-configuración-de-un-router-y-switch.">Ciclo 01/2023, Laboratorio: Configuración de un router y switch.</h1>
+<h3 id="catedrática-elisa-aldana">Catedrática: Elisa Aldana</h3>
+<h3 id="antiguo-cuscatlan">2023, Antiguo Cuscatlan</h3>
+<h1 id="información-teórica">Información teórica</h1>
+<p>El <strong>router</strong> o <strong>enrutador</strong> es un dispositivo que opera en capa tres de nivel de 3. Así, permite que varias<br>
+redes u ordenadores se conecten entre sí y, por ejemplo, compartan una misma conexión de Internet.<br>
+Un router se vale de un protocolo de enrutamiento, que le permite comunicarse con otros enrutadores<br>
+o encaminadores y compartir información entre sí para saber cuál es la ruta más rápida y adecuada<br>
+para enviar datos.<br>
+Un típico enrutador funciona en un plano de control (en este plano el aparato obtiene información<br>
+acerca de la salida más efectiva para un paquete específico de datos) y en un plano de reenvío (en este<br>
+plano el dispositivo se encarga de enviar el paquete de datos recibidos a otra interfaz).<br>
+El router tiene múltiples usos más o menos complejos. En su uso más común, un enrutador permite<br>
+que en una casa u oficina pequeña varias computadoras aprovechen la misma conexión a Internet. En<br>
+este sentido, el router opera como receptor de la conexión de red para encargarse de distribuirlo a<br>
+todos los equipos conectados al mismo. Así, se conecta una red o Internet con otra de área local.<br>
+Hoy por hoy, es sencillo obtener un router en forma más o menos económica de distintas marcas.<br>
+También existen aquellos routers que utilizan software de código libre y que por ende permiten un<br>
+ahorro económico mayor. Además, se han desarrollado softwares que facilitan la operación entre<br>
+redes aun si no se cuenta con un equipo de uso dedicado.<br>
+Por último, últimamente se han diseñado enrutadores inalámbricos, que operan con redes fijas y<br>
+móviles y, por lo tanto, pueden proveer de una conexión de Wi-Fi a los distintos dispositivos dentro<br>
+de una vivienda, oficina o incluso en un espacio mayor.</p>
+<h2 id="switches">Switches</h2>
+<div align="center"><img src="./img1.jpg" width="600">
+</div><p>Los <strong>switches</strong> son piezas de construcción clave para cualquier red. <strong>Conectan varios dispositivos</strong>, como<br>
+computadoras, access points inalámbricos, impresoras y servidores; en la misma red dentro de un<br>
+edificio o campus. Un switch permite a los dispositivos conectados compartir información y<br>
+comunicarse entre sí.<br>
+Los switches se dividen en dos:</p>
+<p>●<strong>Switches no administrados</strong>: Un switch de red no administrado está diseñado para que pueda<br>
+simplemente conectarlo y funcione, sin necesidad de configuración. Los switches no administrados se<br>
+usan generalmente para la conectividad básica. En general, se verán en redes domésticas o donde<br>
+sea que se necesiten unos cuantos puertos más, como en su escritorio, en un laboratorio o en una sala<br>
+de conferencias.</p>
+<p>●<strong>Switches administrados</strong>: Los switches administrados le ofrecen mayor seguridad y más funciones y<br>
+flexibilidad, dado que puede configurarlos para que se adapten a su red. Con este mayor control, puede<br>
+proteger mejor su red y mejorar la calidad del servicio para los que acceden a la red.</p>
+<h2 id="algoritmos-de-enrutamiento">Algoritmos de enrutamiento</h2>
+<div align="center"><img src="./img2.jpg" width="600&quot;">
+</div><p>El <strong>algoritmo de enrutamiento</strong> es aquella parte del software de la capa de red responsable de <strong>decidir por<br>
+cuál línea de salida se transmitirá un paquete entrante</strong>.<br>
+Si la red usa datagramas de manera interna, esta decisión debe tomarse cada vez que llega un paquete<br>
+de datos, dado que la mejor ruta podría haber cambiado desde la última vez. Si la red usa circuitos<br>
+virtuales internamente, las decisiones de<br>
+enrutamiento se toman sólo al establecer un circuito virtual nuevo. En lo sucesivo,<br>
+los paquetes de datos simplemente siguen la ruta ya establecida. Este último caso a veces se llama<br>
+enrutamiento de sesión, dado que una ruta permanece vigente durante toda una sesión.<br>
+Sin importar si las rutas se eligen de manera independiente para cada paquete enviado o sólo cuando<br>
+se establecen nuevas conexiones, existen ciertas propiedades que todo algoritmo de enrutamiento debe<br>
+poseer: exactitud, sencillez, robustez, estabilidad, equidad y eficiencia.</p>
+<p>●<strong>Algoritmo de la ruta más corta:</strong> La idea de este algoritmo es construir un grafo de la red, en donde<br>
+cada nodo del grafo representa un enrutador y cada arco del grafo representa una línea o enlace de<br>
+comunicaciones. Para elegir una ruta entre un par específico de enrutadores, el algoritmo simplemente<br>
+encuentra la ruta más corta entre ellos en el grafo, existen varios algoritmos para calcular la ruta más<br>
+corta.</p>
+<p>●<strong>Inundación:</strong> Este algoritmo envía cada paquete por todas las vías de salida, excepto por la línea en la<br>
+que llegó, de este modo se asegura que el paquete llegue a su destino siempre y cuando exista alguna<br>
+vía, tiene grandes desventajas como la cantidad de paquetes duplicados generados pero es útil cuando<br>
+se busca transmitir un mensaje a todo aquel que lo pueda escuchar.</p>
+<p>●<strong>Enrutamiento por vector distancia:</strong> opera haciendo que cada enrutador mantenga una tabla (llamada<br>
+vector) que proporcione la mejor distancia conocida a cada destino y el enlace que se puede usar para<br>
+llegar ahí. Para actualizar estas tablas se intercambia información con los vecinos. Éste fue el<br>
+algoritmo original de enrutamiento de ARPANET y también se usó en Internet con el nombre de RIP.<br>
+En este algoritmo cada enrutador mantiene una tabla de enrutamiento indicada por cada enrutador de<br>
+la red.</p>
+<p>●<strong>Enrutamiento por estado del enlace:</strong> Este es el origen de OSPF, uno de los algoritmos más utilizados<br>
+dentro de las redes extensas y de internet actualmente, la idea es que cada router reconozca a sus<br>
+vecinos y calcule el costo de enviar un paquete a cada uno de ellos para luego enviárselos y recibir el<br>
+mismo dato de ellos, eventualmente todos los enrutadores conocerán la red completa y podrán calcular<br>
+la ruta más corta a partir de la<br>
+información obtenida.</p>
+<p>●<strong>Enrutamiento jerárquico:</strong> Cuando se utiliza el enrutamiento jerárquico, los enrutadores se dividen en<br>
+lo que llamaremos regiones. Cada enrutador conoce todos los detalles para enrutar paquetes a destinos<br>
+dentro de su propia región, pero no sabe nada de la estructura interna de las otras regiones.</p>
+<p>●<strong>Enrutamiento por difusión:</strong> El envío simultáneo de un paquete a todos los destinos se llama difusión<br>
+(broadcasting) y simplemente envía un paquete distinto a cada destino.El método es lento y requiere<br>
+de antemano la dirección de destino, pero tiene aplicaciones. Una mejora del algoritmo anterior es el<br>
+enrutamiento multidestino, en donde cada paquete contiene una lista de destinos deseados y después<br>
+de unos saltos el paquete contendrá un solo destino como un paquete normal .</p>
+<p>●<strong>Enrutamiento multidifusión:</strong> El proceso de enviar un mensaje a uno de tales grupos se denomina<br>
+multidifusión (multicasting); el algoritmo de enrutamiento que se utiliza es el enrutamiento por<br>
+multidifusión. Los esquemas de enrutamiento por multidifusión se basan en los esquemas de<br>
+enrutamiento por difusión con la diferencia que ahora se establecen grupos bien definidos a los que les<br>
+concierne o que son los únicos que deberían recibir la información.</p>
+<p>●<strong>Enrutamiento Anycast:</strong> En anycast, un paquete se entrega al miembro más cercano de un grupo, es<br>
+útil cuando necesitamos un dato y lo único que<br>
+importa es que la información sea correcta y no quien la envió.</p>
+<p>●<strong>Enrutamiento para host móviles:</strong> Con la aparición de los dispositivos móviles surgió una nueva<br>
+complicación, para enviar un paquete a un host móvil primero hay que encontrar, la solución fue que<br>
+el host móvil indique su posición en todo momento a otro host llamado home agent para que este le<br>
+reciba los paquetes y puede enviarselos al host.</p>
+<p>●<strong>Enrutamiento en redes ad hoc:</strong> Por lo general los routers se mantienen fijos, pero hay casos extremos<br>
+donde los routers se están moviendo, como trabajadores de emergencia en terremotos, vehículos<br>
+militares en un campo de batalla o una flota de barcos en el mar, a las redes de nodos que se forman<br>
+porque simplemente están cerca se les llama redes ad hoc (que está hecho para o en una situación<br>
+específica), puesto que no son tan frecuentes no se sabe claramente cual es el protocolo más útil, una<br>
+propuesta popular es una versión de vector distancia adaptado para funcionar en un entorno móvil<br>
+llamado AODV</p>
+<h1 id="creación-de-una-vlan-haciendo-uso-de-un-switch-y-un-router">Creación de una VLAN haciendo uso de un switch y un router</h1>
+<h2 id="creación-de-una-vlan-incorporando-como-primera-instancia-el-switch.">Creación de una vlan incorporando como primera instancia el switch.</h2>
+<p><strong><strong>Materiales</strong>:</strong><br>
+• Cable Serial-RJ-45 macho<br>
+• Cables UTP Armados<br>
+• Computadora con Putty instalado.<br>
+• Computadora cliente.<br>
+• Switch<br>
+• Router</p>
+<p><strong>Procedimiento:</strong></p>
+<ol>
+<li>Para comenzar esta práctica debes verificar que el cable de tipo “serial” este conectado al<br>
+PC y al dispositivo (Switch). (De no ser así pide ayuda a tu instructor)</li>
+<li>En el escritorio encontraras un programa llamado PUTTY, a continuación, deberás abrirlo.</li>
+</ol>
+<div align="center"><img src="./img4.jpg" width="400">
+</div><ol start="3">
+<li>En la pantalla principal deberás seleccionar el radio botón “Serial”. Luego en el menú de la<br>
+izquierda seleccionar la opción “Serial”, para esta practica deberems revisar que numero de puerto posee nuestra computadora (<em><strong>COM</strong></em>), buscamos en la barra de tareas el administrador de dispositivos</li>
+</ol>
+<div align="center"><img src="./img5.png" width="400">
+</div><p>al acceder al admin de dispositivos, buscamos donde diga puertos com, desplegamos y nos dira el numero de puerto <strong>COM</strong></p>
+<div align="center"><img src="./img6.png" width="400">
+</div><div align="center"><img src="./img7.png">
+</div><ol start="4">
+<li>A continuación, deberás cambiar la opción “<strong>Flow Control</strong>” a “<strong>None</strong>” y dar click en “<strong>Open</strong>”.<br>
+Notaras que se ejecutara la consola de PUTTY.</li>
+</ol>
+<div align="center"><img src="./img8.png">
+</div><ol start="5">
+<li>Si es primera vez que se inicia el dispositivo, empezaras con la configuración básica del Switch, tendrás que asignarle contraseña, nombre y alguna otra información. (A continuación, se muestran los comandos del primer inicio del dispositivo y como se debe configurar).</li>
+</ol>
+<div align="center"><img src="./img9.png" width="400">
+</div><ol start="6">
+<li>
+<p>Para poder asignar puertos a una red, debemos primero crearla, a continuación, se muestran un listado de comandos que deberás ejecutar para crear la VLAN.</p>
+<p><strong>- Switch&gt;enable</strong><br>
+<strong>- Switch# configure terminal</strong><br>
+<strong>- Switch(config)# Vlan 10</strong><br>
+<strong>- Switch(config-vlan)# name [ejemplo]</strong><br>
+<strong>- Switch(config-vlan)# exit</strong><br>
+<strong>-# exit</strong></p>
+</li>
+<li>
+<p>Ahora ejecutaremos el comando show vlan para revisar la información previamenteconfigurada.</p>
+</li>
+<li>
+<p>A continuación, introduciremos a la VLAN los puertos que necesitamos que se conecten e intercambien información entre sí, puedes eleegir los que desees, pero <strong>recomendamos utilizar los puertos del 6 en adelante</strong>.</p>
+<p><strong>#configure terminal</strong><br>
+<strong>#interface FastEthernet 0/10</strong><br>
+<strong>#switchport access vlan 10</strong></p>
+<p><strong>#exit</strong></p>
+<p><strong>#interface FastEthernet 0/12</strong><br>
+<strong>#switchport access vlan 10</strong></p>
+<p><strong>#exit</strong></p>
+<p><strong>#interface GigabitEthernet 0/1</strong><br>
+<strong>#switchport access vlan 10</strong></p>
+<p><strong>#end</strong><br>
+<strong>wr</strong></p>
+</li>
+<li>
+<p>A continuación, verificaremos que los puertos se hayan asignado correctamente, para ello ejecutaremos el comando <strong>show vlan</strong>.</p>
+</li>
+</ol>
+<p><strong>Ahora que ya puedes crear una Vlan, deberas crear 2 Vlans más, con 2 puertos y el nombre que quieras! (no es necesario configurar el puerto GigabitEthernet, utiliza solo los FastEthernet)</strong></p>
+<h2 id="configuración-de-la-velocidad-de-los-puertos">Configuración de la velocidad de los puertos</h2>
+<p>Para velocidad se usa el comando “<strong>speed</strong>” seguido de un espacio y la velocidad en Mb (10, 100), para<br>
+fullduplex el comando “<strong>duplex full</strong>”, es conveniente para evitar problemas dejar los ajustes en<br>
+automático con los comandos “<strong>duplex auto</strong>” y “<strong>speed auto</strong>” (que es como esta por defecto) y solo<br>
+ponerlo en manual si el equipo a conectar al puerto requiere una determinada velocidad y modo<br>
+duplex.</p>
+<pre><code>#configure terminal
+#interface FastEthernet 0/1
+#speed 100
+#duplex full
+#end
+</code></pre>
+<ol start="10">
+<li>Conectaremos los cables de red en los puertos configurados (en el switch) en un extremo, y<br>
+en el otro a las computadoras que te asignara tu instructor.</li>
+<li>Conectaremos el switch con el router de gigabitethernet a gigabitethernet.</li>
+</ol>
+<h2 id="incorporación-del-router-en-la-vlan.">Incorporación del router en la vlan.</h2>
+<ol start="13">
+<li>
+<p>A continuación, desconectaras el cable serial del Switch y lo conectaras en el router.</p>
+</li>
+<li>
+<p>Notaras que la consola empieza a cambiar y a inicializar las configuraciones básicas del equipo.</p>
+</li>
+<li>
+<p>Si el equipo no se encuentra configurado te pedirá ingresar la información básica.</p>
+<p><strong>Enter host name [Router]: <br>
+Enter enable secret: 1234<br>
+Enter enable password 12345<br>
+Enter virtual terminal password: 1234</strong></p>
+</li>
+<li>
+<p>Una vez finalizada la configuración anterior te pedirá ingresar el nombre de la interfaz a<br>
+configurar, a continuación, presionaras crtl + c.</p>
+</li>
+<li>
+<p>Por último, debemos configurar los saltos de red dentro del router, asignar una dirección IP<br>
+con la respectiva puerta de enlace. Para ello ejecutaremos los siguientes comandos:</p>
+<p><strong>#enable<br>
+#configure terminal<br>
+#interface GigabitEthernet 0/1<br>
+#ip address 192.168.0.2 255.255.255.0<br>
+#no shutdown<br>
+#ip default-gateway 192.168.0.1<br>
+#end<br>
+#wr</strong></p>
+</li>
+<li>
+<p>Ahora verificaremos que el puerto este encendido para eso ejecutaremos el comando <strong>sh ip int br</strong>. Notaras que aparece la dirección ip asignada al puerto gigabit,</p>
+</li>
+<li>
+<p>Como último paso deberás configurar las direcciones IP de las computadoras:</p>
+</li>
+</ol>
+<p>• Escribe en el buscador de Windows: <strong>Panel de control</strong></p>
+<div align="center"><img src="./img10.png" width="400">
+</div><p>• Click en: <strong>Redes e internet</strong></p>
+<div align="center"><img src="./img11.png" width="400">
+</div><p>• Click en: <strong>Centro de redes y recursos compartidos</strong><br>
+• Click en: <strong>Ethernet</strong><br>
+• Click en: <strong>propiedades</strong><br>
+• Click en: <strong>Internet Protocol Ver.4 (IPv4)</strong></p>
+<div align="center"><img src="./img12.png" width="400">
+</div><p>• A continuación, le asignamos las ip correspondiente a cada maquina, dando click<br>
+en usar la siguiente dirección IP, la asignamos y para el apartado de servidor<br>
+DNS asignamos el siguiente servidor DNS</p>
+<div align="center"><img src="./img13.png" height="400">
+</div><h2 id="sugerencia-de-direcciones-ip">Sugerencia de direcciones IP</h2>
+<pre><code>   **PC1
+IP:192.168.0.3
+Mascara de subred:
+255.255.255.0 (Clase C)
+Puerta de enlace:
+192.168.0.1
+
+   **PC2
+**IP:192.168.0.4
+Mascara de subred:
+255.255.255.0 (Clase C)
+Puerta de enlace:
+192.168.0.1
+</code></pre>
+<p>antes de hacer ping entre maquinas, deberemos de desactivar el firewall de windows, de la siguiente manera:</p>
+<p><strong>-   Presiona la tecla de Windows + R para abrir la ventana Ejecutar.</strong></p>
+<p><strong>-   Escribe “control” y presiona Enter para abrir el Panel de Control.</strong></p>
+<p><strong>-   En el Panel de Control, busca “Sistema y Seguridad” y haz clic en él.</strong></p>
+<p><strong>-   A continuación, haz clic en “Firewall de Windows”.</strong></p>
+<p><strong>-   En el menú de la izquierda, haz clic en “Activar o desactivar el Firewall de Windows”.</strong></p>
+<p><strong>-   Selecciona la opción “Desactivar Firewall de Windows (no recomendado)” tanto para la configuración de la red privada como para la configuración de la red pública.</strong></p>
+<ul>
+<li><strong>Haz clic en “Aceptar” para guardar los cambios.</strong></li>
+</ul>
+ <div align="center"><img src="./imgfire.png" height="400">
+</div><p>Para verificar el correcto funcionamiento deberás hacer:</p>
+<ul>
+<li>ping de Pc1 a Pc2</li>
+<li>ping de Pc2 a Pc1</li>
+<li>ping de Pc1 a Router (usando la terminal)</li>
+<li>ping de Router a Pc1</li>
+<li>ping de Pc2 a Router (usando la terminal)</li>
+<li>ping de Router a Pc2</li>
+</ul>
+<p>Si el ping se realiza correctamente, se mostrará información detallada sobre los paquetes enviados y recibidos, así como estadísticas sobre el número de paquetes perdidos y la velocidad de transmisión.</p>
+<h1 id="reinicio-de-switch-y-router">Reinicio de switch y router</h1>
+<p>si deseas reiniciar el switch, es tan sencillo como <strong>mantener apretado el boton de la parte de adelante, hasta que este comience a parpadear</strong> (la consola de putty igualmente comenzara a cambiar, ese es un indicador de que se esta realizando con exito el reinicio y borrado de todos los datos del switch).<br>
+Y el switch queda reiniciado de fabrica en su totalidad, se recomienda apagar y encender el switch para asegurarse que se realizo con éxito esta operación</p>
+<p>Si se desea reiniciar de fabrica un router, se utilizan los siguientes pasos:</p>
+<pre><code>**router&gt; enable
+router# write erase
+Erasing the nvram filesystem will remove all configuration files! Continue?
+[confirm] *Press Enter key*
+router# reload
+Proceed with reload? [confirm] &lt;Press Enter key&gt;**
+</code></pre>
+<p>Y el router queda reiniciado de fabrica en su totalidad, se recomienda apagar y encender el router para asegurarse que se realizo con éxito esta operación<br>
+Para reiniciar un switch, lo único que se debe de hacer es encenderlo, esperar a que este cargue (luz verde sin parpadear) y se presionara el botón (mode) hasta que las luces comiencen a parpadear, y se apague, se suelta el botón y el switch iniciara sin ninguna configuración, es decir, de fabrica)</p>
+
+    </div>
+  </div>
+</body>
+
+</html>
